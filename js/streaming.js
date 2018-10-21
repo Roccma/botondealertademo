@@ -34,7 +34,7 @@ var llamadaDesconectada;
 llamadaDesconectada = false;
 
 jQuery.ajax({
-	url : 'https://voyentaxiws.herokuapp.com/usuarios.php/EstadoLlamada?id=' + id,
+	url : 'https://botondealertaws.herokuapp.com/usuarios.php/EstadoLlamada?id=' + id,
 	type : 'GET',
 	dataType : 'json',
 	async : false
@@ -240,7 +240,7 @@ socket.on('location', function(data){
 						$('#divReconnectingText').css('display', 'none');
 					}				
 					jQuery.ajax({
-						url : 'https://voyentaxiws.herokuapp.com/usuarios.php/ActualizarEstadoLlamada?id=' + id + "&cantidad_desconexiones=" + cantidad_desconexiones + "&desconectada=1",
+						url : 'https://botondealertaws.herokuapp.com/usuarios.php/ActualizarEstadoLlamada?id=' + id + "&cantidad_desconexiones=" + cantidad_desconexiones + "&desconectada=1",
 						type : 'GET',
 						dataType : 'json'
 					})
@@ -268,7 +268,7 @@ socket.on('reconnected', function(data){
 			cantidad_desconexiones++;
 		}
 		jQuery.ajax({
-			url : 'https://voyentaxiws.herokuapp.com/usuarios.php/ActualizarEstadoLlamada?id=' + id + "&cantidad_desconexiones=" + cantidad_desconexiones + "&desconectada=0",
+			url : 'https://botondealertaws.herokuapp.com/usuarios.php/ActualizarEstadoLlamada?id=' + id + "&cantidad_desconexiones=" + cantidad_desconexiones + "&desconectada=0",
 			type : 'GET',
 			dataType : 'json'
 		})
@@ -300,7 +300,7 @@ socket.on('finish_help', function(data){
 	llamadaFinalizada = true;
 
 	$.ajax({
-    	url : "https://voyentaxiws.herokuapp.com/usuarios.php/FinLlamada?callid="+id+"&url=&date=&latitud="+latitud+"&longitud="+longitud,
+    	url : "https://botondealertaws.herokuapp.com/usuarios.php/FinLlamada?callid="+id+"&url=&date=&latitud="+latitud+"&longitud="+longitud,
     	type : 'GET',
     	dataType : 'json'
     });
@@ -371,7 +371,7 @@ function initializeSession(sessionId, token){
 	
 	let apiKey;
 	jQuery.ajax({
-		url : 'https://voyentaxiws.herokuapp.com/usuarios.php/GetClaveTokBox',
+		url : 'https://botondealertaws.herokuapp.com/usuarios.php/GetClaveTokBox',
 		type : 'GET',
 		dataType : 'json'
 	})

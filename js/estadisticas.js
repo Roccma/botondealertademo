@@ -202,7 +202,7 @@ function orderdown(tipo){
 $(document).on('ready', function(){
 	var array1 = [], array2 = [], array3 = [], array4 = [];
 	$.ajax({
-		url : "https://voyentaxiws.herokuapp.com/usuarios.php/Stats",
+		url : "https://botondealertaws.herokuapp.com/usuarios.php/Stats",
 		type : 'GET',
 		dataType : 'json'
 	})
@@ -339,7 +339,7 @@ $(document).on('ready', function(){
 	   	$('#divSecretKey').removeClass('has-error');
 
 	    $.ajax({
-	     	url : 'https://voyentaxiws.herokuapp.com/usuarios.php/GetClaveTokBox',
+	     	url : 'https://botondealertaws.herokuapp.com/usuarios.php/GetClaveTokBox',
 	     	type : 'GET',
 	     	dataType : 'json'
 	    })
@@ -360,7 +360,7 @@ $(document).on('ready', function(){
 		$('#divServidorRespaldoVET').removeClass('has-error');
 
 	   	$.ajax({
-	    	url : 'https://voyentaxiws.herokuapp.com/usuarios.php/GetServidores',
+	    	url : 'https://botondealertaws.herokuapp.com/usuarios.php/GetServidores',
 	    	type : 'GET',
 	    	dataType : 'json'
 	    })
@@ -413,7 +413,7 @@ $(document).on('ready', function(){
 	   		$('#alertServidores').fadeOut();
 
 		   	$.ajax({
-		   		url : 'https://voyentaxiws.herokuapp.com/usuarios.php/UpdateServidores?servidor_bda=' + $('#servidorBDA').val() + "&servidor_vet=" + $('#servidorVET').val() + "&servidor_respaldo_vet=" + $('#servidorRespaldoVET').val(),
+		   		url : 'https://botondealertaws.herokuapp.com/usuarios.php/UpdateServidores?servidor_bda=' + $('#servidorBDA').val() + "&servidor_vet=" + $('#servidorVET').val() + "&servidor_respaldo_vet=" + $('#servidorRespaldoVET').val(),
 		   		type : 'GET',
 		   		dataType : 'json'
 		   	})

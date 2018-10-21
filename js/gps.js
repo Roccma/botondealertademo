@@ -42,7 +42,7 @@ $(document).on('ready', function(){
     	$('#divSecretKey').removeClass('has-error');
 
        	$.ajax({
-        	url : 'https://voyentaxiws.herokuapp.com/usuarios.php/GetClaveTokBox',
+        	url : 'https://botondealertaws.herokuapp.com/usuarios.php/GetClaveTokBox',
         	type : 'GET',
         	dataType : 'json'
         })
@@ -62,7 +62,7 @@ $(document).on('ready', function(){
        	$('#divServidorVET').removeClass('has-error');
        	$('#divServidorRespaldoVET').removeClass('has-error');
        	$.ajax({
-        	url : 'https://voyentaxiws.herokuapp.com/usuarios.php/GetServidores',
+        	url : 'https://botondealertaws.herokuapp.com/usuarios.php/GetServidores',
         	type : 'GET',
         	dataType : 'json'
         })
@@ -115,7 +115,7 @@ $(document).on('ready', function(){
 	   		$('#alertServidores').fadeOut();
 
 		    $.ajax({
-		    	url : 'https://voyentaxiws.herokuapp.com/usuarios.php/UpdateServidores?servidor_bda=' + $('#servidorBDA').val() + "&servidor_vet=" + $('#servidorVET').val() + "&servidor_respaldo_vet=" + $('#servidorRespaldoVET').val(),
+		    	url : 'https://botondealertaws.herokuapp.com/usuarios.php/UpdateServidores?servidor_bda=' + $('#servidorBDA').val() + "&servidor_vet=" + $('#servidorVET').val() + "&servidor_respaldo_vet=" + $('#servidorRespaldoVET').val(),
 		    	type : 'GET',
 		    	dataType : 'json'
 		    })

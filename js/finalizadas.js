@@ -11,7 +11,7 @@ var markerGroup = L.layerGroup().addTo(map);
 let socket = io();
 
 $.ajax({
-	url : "https://voyentaxiws.herokuapp.com/usuarios.php/VideollamadasFinalizadas",
+	url : "https://botondealertaws.herokuapp.com/usuarios.php/VideollamadasFinalizadas",
 	type : 'GET',
 	dataType : 'json'
 })
@@ -46,7 +46,7 @@ $.ajax({
 
 socket.on('finish_help', function(data){
 	$.ajax({
-	 	url : "https://voyentaxiws.herokuapp.com/usuarios.php/DatosLlamadaTabla?id=" + data['id'],
+	 	url : "https://botondealertaws.herokuapp.com/usuarios.php/DatosLlamadaTabla?id=" + data['id'],
 	 	type : 'GET',
 	 	dataType : 'json'
 	})
@@ -79,7 +79,7 @@ socket.on('help', function(data){
 
 socket.on('finish_help_from_app', function(data){
    	$.ajax({
-    	url : "https://voyentaxiws.herokuapp.com/usuarios.php/DatosLlamadaTabla?id=" + data['id'],
+    	url : "https://botondealertaws.herokuapp.com/usuarios.php/DatosLlamadaTabla?id=" + data['id'],
     	type : 'GET',
     	dataType : 'json'
     })
@@ -114,7 +114,7 @@ $('#opcionOpenTok').on('click', function(){
    	$('#divSecretKey').removeClass('has-error');
 
    	$.ajax({
-    	url : 'https://voyentaxiws.herokuapp.com/usuarios.php/GetClaveTokBox',
+    	url : 'https://botondealertaws.herokuapp.com/usuarios.php/GetClaveTokBox',
     	type : 'GET',
     	dataType : 'json'
     })
@@ -158,7 +158,7 @@ $('#btnAceptarOpenTok').on('click', function(){
    	$('#alertOpenTok').fadeOut();
 
    	$.ajax({
-   		url : 'https://voyentaxiws.herokuapp.com/usuarios.php/ClavesTokBox?apiKey=' + $('#otApiKey').val() + "&projectKey=" + $('#otSecretKey').val(),
+   		url : 'https://botondealertaws.herokuapp.com/usuarios.php/ClavesTokBox?apiKey=' + $('#otApiKey').val() + "&projectKey=" + $('#otSecretKey').val(),
    		type : 'GET',
    		dataType : 'json'
    	})
@@ -195,7 +195,7 @@ function verLlamada(id){
 	$('#modalVerLlamadaFinalizada').modal('show');
 
    	jQuery.ajax({
-		url : 'https://voyentaxiws.herokuapp.com/usuarios.php/DatosLlamadaPorId',
+		url : 'https://botondealertaws.herokuapp.com/usuarios.php/DatosLlamadaPorId',
 		type : 'GET',
 		dataType : 'json',
 		data : {'id' : id}
@@ -380,7 +380,7 @@ $('#opcionServidores').on('click', function(){
    	$('#divServidorRespaldoVET').removeClass('has-error');
 
    	$.ajax({
-    	url : 'https://voyentaxiws.herokuapp.com/usuarios.php/GetServidores',
+    	url : 'https://botondealertaws.herokuapp.com/usuarios.php/GetServidores',
     	type : 'GET',
     	dataType : 'json'
     })
@@ -432,7 +432,7 @@ $('#btnAceptarServidores').on('click', function(){
    		$('#alertServidores').fadeOut();
 
       	$.ajax({
-      		url : 'https://voyentaxiws.herokuapp.com/usuarios.php/UpdateServidores?servidor_bda=' + $('#servidorBDA').val() + "&servidor_vet=" + $('#servidorVET').val() + "&servidor_respaldo_vet=" + $('#servidorRespaldoVET').val(),
+      		url : 'https://botondealertaws.herokuapp.com/usuarios.php/UpdateServidores?servidor_bda=' + $('#servidorBDA').val() + "&servidor_vet=" + $('#servidorVET').val() + "&servidor_respaldo_vet=" + $('#servidorRespaldoVET').val(),
       		type : 'GET',
       		dataType : 'json'
       	})

@@ -217,7 +217,7 @@ io.on('connection', (socket) => {
 	});
 
 	socket.on('help', (sessionId, token, cedula, name, email, telephone, latitud, longitud, fechaHora, cantidad_desconexiones, dias_persistencia) => {	
-		var url = "https://voyentaxiws.herokuapp.com/usuarios.php/DatosLlamada?userid="+cedula+"&date="+fechaHora+"&latitud="+latitud+"&longitud="+longitud+"&sessionid="+sessionId+"&token="+token+"&cantidad_desconexiones="+cantidad_desconexiones+"&dias_persistencia="+dias_persistencia;
+		var url = "https://botondealertaws.herokuapp.com/usuarios.php/DatosLlamada?userid="+cedula+"&date="+fechaHora+"&latitud="+latitud+"&longitud="+longitud+"&sessionid="+sessionId+"&token="+token+"&cantidad_desconexiones="+cantidad_desconexiones+"&dias_persistencia="+dias_persistencia;
 		request.get(url,(error,res,body) => {
 			if(error)
 				console.log(error);
@@ -230,7 +230,7 @@ io.on('connection', (socket) => {
 	});
 
 	socket.on('finish_help_from_app', (sessionId, id, latitud, longitud) => {
-		var url = "https://voyentaxiws.herokuapp.com/usuarios.php/FinLlamada?callid="+id+"&url=&date=&latitud="+latitud+"&longitud="+longitud;
+		var url = "https://botondealertaws.herokuapp.com/usuarios.php/FinLlamada?callid="+id+"&url=&date=&latitud="+latitud+"&longitud="+longitud;
 		console.log(url);
 		request.get(url,(error,res,body) => {
 			if(error)
@@ -246,7 +246,7 @@ io.on('connection', (socket) => {
 	});
 
 	socket.on('update_call_data', (id, latitud_final, longitud_final, url_video) => {
-		var url = "https://voyentaxiws.herokuapp.com/usuarios.php/ActualizarDatosLlamada?id="+id+"&latitud_final="+ latitud_final + "&longitud_final=" + longitud_final + "&url_video=" + url_video;
+		var url = "https://botondealertaws.herokuapp.com/usuarios.php/ActualizarDatosLlamada?id="+id+"&latitud_final="+ latitud_final + "&longitud_final=" + longitud_final + "&url_video=" + url_video;
 		console.log(url);
 		request.get(url,(error,res,body) => {
 			if(error)
@@ -255,7 +255,7 @@ io.on('connection', (socket) => {
 	});
 
 	socket.on('update_polyline', (id, p, distancia) => {
-			var url2 = "https://voyentaxiws.herokuapp.com/usuarios.php/UpdatePolyline?id="+id+"&polyline="+ p + "&distancia=" + distancia;
+			var url2 = "https://botondealertaws.herokuapp.com/usuarios.php/UpdatePolyline?id="+id+"&polyline="+ p + "&distancia=" + distancia;
 			console.log(url2);
 			request.get(url2,(error,res,body) => {
 				if(error)

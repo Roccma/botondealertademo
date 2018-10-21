@@ -11,7 +11,7 @@ $(document).on('ready', function(){
 	let sessionId = credentialsParts[0].replace("sessionid=", "");
 
 	jQuery.ajax({
-		url : 'https://voyentaxiws.herokuapp.com/usuarios.php/DatosTaxista',
+		url : 'https://botondealertaws.herokuapp.com/usuarios.php/DatosTaxista',
 		type : 'GET',
 		dataType : 'json',
 		data : {'sessionId' : sessionId}
@@ -37,7 +37,7 @@ $(document).on('ready', function(){
    	$('#divSecretKey').removeClass('has-error');
 
     $.ajax({
-     	url : 'https://voyentaxiws.herokuapp.com/usuarios.php/GetClaveTokBox',
+     	url : 'https://botondealertaws.herokuapp.com/usuarios.php/GetClaveTokBox',
      	type : 'GET',
      	dataType : 'json'
     })
@@ -57,7 +57,7 @@ $(document).on('ready', function(){
 	$('#divServidorRespaldoVET').removeClass('has-error');
 
 	$.ajax({
-	  	url : 'https://voyentaxiws.herokuapp.com/usuarios.php/GetServidores',
+	  	url : 'https://botondealertaws.herokuapp.com/usuarios.php/GetServidores',
 	  	type : 'GET',
 	  	dataType : 'json'
 	})
@@ -110,7 +110,7 @@ $(document).on('ready', function(){
 	   		$('#alertServidores').fadeOut();
 
 	       	$.ajax({
-	       		url : 'https://voyentaxiws.herokuapp.com/usuarios.php/UpdateServidores?servidor_bda=' + $('#servidorBDA').val() + "&servidor_vet=" + $('#servidorVET').val() + "&servidor_respaldo_vet=" + $('#servidorRespaldoVET').val(),
+	       		url : 'https://botondealertaws.herokuapp.com/usuarios.php/UpdateServidores?servidor_bda=' + $('#servidorBDA').val() + "&servidor_vet=" + $('#servidorVET').val() + "&servidor_respaldo_vet=" + $('#servidorRespaldoVET').val(),
 	       		type : 'GET',
 	       		dataType : 'json'
 	       	})
@@ -160,7 +160,7 @@ $(document).on('ready', function(){
 	   	$('#alertOpenTok').fadeOut();
 
 	   	$.ajax({
-	  		url : 'https://voyentaxiws.herokuapp.com/usuarios.php/ClavesTokBox?apiKey=' + $('#otApiKey').val() + "&projectKey=" + $('#otSecretKey').val(),
+	  		url : 'https://botondealertaws.herokuapp.com/usuarios.php/ClavesTokBox?apiKey=' + $('#otApiKey').val() + "&projectKey=" + $('#otSecretKey').val(),
 	   		type : 'GET',
 	  		dataType : 'json'
 	   	})

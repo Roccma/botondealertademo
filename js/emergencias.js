@@ -2,7 +2,7 @@ let table;
 let socket = io();
 
 $.ajax({
-   	url : "https://voyentaxiws.herokuapp.com/usuarios.php/VideollamadasActuales",
+   	url : "https://botondealertaws.herokuapp.com/usuarios.php/VideollamadasActuales",
    	type : 'GET',
    	dataType : 'json'
 })
@@ -82,7 +82,7 @@ $('#opcionOpenTok').on('click', function(){
 	$('#divSecretKey').removeClass('has-error');
 
     $.ajax({
-	  	url : 'https://voyentaxiws.herokuapp.com/usuarios.php/GetClaveTokBox',
+	  	url : 'https://botondealertaws.herokuapp.com/usuarios.php/GetClaveTokBox',
 	  	type : 'GET',
 	   	dataType : 'json'
 	})
@@ -102,7 +102,7 @@ $('#opcionServidores').on('click', function(){
 	$('#divServidorVET').removeClass('has-error');
 	$('#divServidorRespaldoVET').removeClass('has-error');
 	$.ajax({
-	 	url : 'https://voyentaxiws.herokuapp.com/usuarios.php/GetServidores',
+	 	url : 'https://botondealertaws.herokuapp.com/usuarios.php/GetServidores',
 	 	type : 'GET',
 	 	dataType : 'json'
 	})
@@ -149,7 +149,7 @@ $('#btnAceptarServidores').on('click', function(){
   	else{
   		$('#alertServidores').fadeOut();
 	   	$.ajax({
-	   		url : 'https://voyentaxiws.herokuapp.com/usuarios.php/UpdateServidores?servidor_bda=' + $('#servidorBDA').val() + "&servidor_vet=" + $('#servidorVET').val() + "&servidor_respaldo_vet=" + $('#servidorRespaldoVET').val(),
+	   		url : 'https://botondealertaws.herokuapp.com/usuarios.php/UpdateServidores?servidor_bda=' + $('#servidorBDA').val() + "&servidor_vet=" + $('#servidorVET').val() + "&servidor_respaldo_vet=" + $('#servidorRespaldoVET').val(),
 	   		type : 'GET',
 	   		dataType : 'json'
 	   	})
@@ -193,7 +193,7 @@ $('#btnAceptarOpenTok').on('click', function(){
   	$('#alertOpenTok').fadeOut();
 
 	$.ajax({
-		url : 'https://voyentaxiws.herokuapp.com/usuarios.php/ClavesTokBox?apiKey=' + $('#otApiKey').val() + "&projectKey=" + $('#otSecretKey').val(),
+		url : 'https://botondealertaws.herokuapp.com/usuarios.php/ClavesTokBox?apiKey=' + $('#otApiKey').val() + "&projectKey=" + $('#otSecretKey').val(),
 		type : 'GET',
 		dataType : 'json'
 	})
@@ -227,7 +227,7 @@ function createDataTable(){
 
 function verificarFinalizarLlamada(sessionId, id){
    	jQuery.ajax({
-		url : 'https://voyentaxiws.herokuapp.com/usuarios.php/EstadoLlamada?id=' + id,
+		url : 'https://botondealertaws.herokuapp.com/usuarios.php/EstadoLlamada?id=' + id,
 		type : 'GET',
 		dataType : 'json',
 		async : false
@@ -268,7 +268,7 @@ $('#btnAceptarConfirmacion').on('click', function(){
 	window.setTimeout(function(){
 		$('#modalFinalizandoLlamada').modal('hide');
 		$.ajax({
-		   	url : "https://voyentaxiws.herokuapp.com/usuarios.php/FinLlamada?callid="+id+"&url=&date=&latitud=" + lat + "&longitud=" + lon,
+		   	url : "https://botondealertaws.herokuapp.com/usuarios.php/FinLlamada?callid="+id+"&url=&date=&latitud=" + lat + "&longitud=" + lon,
 		   	type : 'GET',
 		   	dataType : 'json',
 		   	async : false
