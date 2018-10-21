@@ -1,0 +1,884 @@
+body, html {
+    background: url('/img/ftax.png'); 
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#videos {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#publisher{
+  height: calc(100% - 30px);
+}
+
+.OT_publisher {
+  border-radius: 0 0 3px 3px;
+}
+
+.atenderLlamada{
+  color: grey;
+  font-size: 18px;
+}
+
+.finalizarLlamada{
+  color: grey;
+  font-size: 18px;
+}
+
+.verLlamadaFinalizada{
+  color: grey;
+  font-size: 18px;
+}
+
+.atenderLlamada:hover{
+    cursor: pointer;
+    color: #089B35;
+}
+
+.finalizarLlamada:hover{
+    cursor: pointer;
+    color: red;
+}
+.verLlamadaFinalizada:hover{
+    cursor: pointer;
+    color:  #FFE448;
+}
+
+#contenedorMapa{
+	position: relative;
+	margin-right: 15%;
+	height: 600px;
+	top: 50px;
+	margin-left: 15%;
+  margin-bottom: 100px;
+  box-shadow: rgba(0, 0, 0, 0.2) -1px -2px 1px, 
+    rgba(0, 0, 0, 0.2) 3.5px 2px 1px, 
+    -2px 0px rgba(0, 0, 0, 0.2), 2px 0 rgba(0, 0, 0, 0.2), 
+    0px -2px rgba(0, 0, 0, 0.2), 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+#map {
+  height: calc(100% - 30px);
+}
+
+#mapDatos{
+  height: 350px;
+  width: 100%;
+}
+
+#description {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+#infowindow-content .title {
+  font-weight: bold;
+}
+
+#infowindow-content {
+  display: none;
+}
+
+#map #infowindow-content {
+  display: inline;
+}
+
+.pac-card {
+  margin: 10px 10px 0 0;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  font-family: Roboto;
+}
+
+#pac-container {
+  padding-bottom: 12px;
+  margin-right: 12px;
+}
+
+.pac-controls {
+  display: inline-block;
+  padding: 5px 11px;
+}
+
+.pac-controls label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 400px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+#title {
+  color: #fff;
+  background-color: #4d90fe;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 6px 12px;
+}
+#target {
+  width: 345px;
+}
+
+.footer{
+  background: #FFE448;
+  position: fixed;
+  height: 35px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 14px;
+  font-weight: bold;
+  padding-top: 7px;
+  box-sizing: border-box;
+}
+
+.menu{
+  background-color: #FFE448; 
+  position: fixed; 
+  left: 0; 
+  right: 0; 
+  height: 70px;
+}
+
+.contenedorMain{  
+  max-width: 1100px; 
+  margin: 0 auto;
+}
+
+.main{
+  position: fixed; 
+  top: 70px; 
+  bottom: 35px; 
+  left: 0; 
+  right: 0;
+  padding: 0 !important;
+  overflow-y: auto;
+}
+
+.main2{
+  position: fixed; 
+  top: 70px; 
+  bottom: 35px; 
+  left: 0; 
+  right: 0;
+  padding: 0 !important;
+  max-width: 1100px; 
+  margin: 0 auto;
+}
+
+.pagebody{
+  overflow-y: auto; 
+  overflow-x: hidden; 
+  box-sizing: 
+  border-box; margin: 0;
+}
+
+.menucontainer{
+  padding-left: 0 !important;  
+  padding-right: 0 !important;
+  max-width: 1100px; 
+  height: 70px;
+  /*border: 1px solid black;*/
+}
+
+.busquedaLlamadas{
+  width: 450px;
+  margin-top: 15.9px;
+  left: 35px;
+  display: inline-block;
+  position: relative;
+  float: left;
+}
+
+.opcionesMenu{
+  /*border: 1px solid black;*/
+  display: inline-block;
+  float: right;
+  width: 80.5%;
+}
+
+#opcionEmergencias{
+  margin-left: 0 !important;
+}
+
+#opcionEmergencias span{
+  left: 0 !important;
+}
+
+.divIcono{
+  display: inline-block;
+  margin-left: 35px;
+}
+
+.divIcono i{
+
+  font-size: 28px;
+  color: transparent;
+  -webkit-text-stroke: 2px black;
+  margin-top: 19px;
+}
+
+.divIcono span{
+  position: relative;
+  bottom: 5px;
+  font-weight: bold;
+  left: 5px;
+}
+
+.table{
+  margin-top: 40px;
+  margin-bottom: 15px !important;
+}
+
+.divIcono:hover{
+  cursor: pointer;
+}
+
+.divIcono:hover i{
+  -webkit-text-stroke: 2px grey;
+}
+
+.divIcono:hover span{
+  color: grey;
+}
+
+select[name='DataTables_Table_0_length'], #DataTables_Table_0_filter label input{
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-weight: normal;
+}   
+
+#DataTables_Table_0_wrapper{
+  margin-top: 30px;
+}
+
+#DataTables_Table_0{
+  margin-top: 55px;
+}
+
+#DataTables_Table_0_wrapper{
+  margin-bottom: 35px !important;
+}
+
+.modal-header{
+  background: #FFE448;
+  color: black;
+  border-radius: 5px 5px 0 0;
+  height: 59px;
+}
+
+.modal-title{
+  margin-top: 2.5px !important;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.modal-header .close{
+  font-size: 32.5px;
+  outline: 0;
+}
+
+.imgTokbox{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  float: left;
+  margin-right: 15px;
+}
+
+.modal .modal-dialog{
+  width: 500px;
+}
+
+.dataTables_filter{
+  margin-bottom: 35px;
+}
+
+#headerTabla{
+  background: #FFE448;
+}
+
+.table.dataTable thead .sorting{
+  background-image: none !important;
+}
+
+.table tr:nth-child(even) {
+  background: #F5F5F5 !important;
+}
+
+#body tr:nth-child(odd) {
+  background: #FAFAFA !important;
+}
+
+#colTaxista{
+  width: 25%;
+}
+
+#colEmail{
+  width: 25%;
+
+}
+
+#colCelular{
+  width: 20%;
+  
+}
+
+#colFecha{
+  
+}
+
+#colHora{
+  
+}
+
+#colVer{
+  
+}
+
+#colFinalizar{  
+}
+
+
+.contenedorPublisher{
+    position: absolute;
+    width: 278px;
+    height: 200px;
+    bottom: 75px;
+    z-index: 100;
+    border: 3px solid #FFE448;
+    border-radius: 3px;
+}
+
+.contenedorSubscriber{
+  position: absolute;
+  left: 0;
+  top: 25px;
+  width: 70% !important;
+  height:  59% !important;
+  z-index: 10;
+  border: 3px solid #FFE448;
+  border-radius: 5px;
+
+}
+
+.tituloContenedorSubscriber{
+  background: #FFE448;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.tituloContenedorPublisher{
+  background: #FFE448;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.tituloContenedorCoordenadas{
+  background: #FFE448;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#subscriber {
+    height: calc(100% - 30px);
+}
+
+#contenedorInformacionSubscriber{
+    position: absolute;
+    background: #FBFBFB;
+    width: 100%;
+    bottom: 0;
+    top: 30px;
+}
+
+#publisher{
+  border: 0px solid black !important;
+  left: 0 !important;
+
+}
+
+.OT_subscriber{
+  width: 100% !important;  
+  border-radius: 0 0 3px 3px ;
+  position: absolute !important;
+  top: 30px !important;
+  height: calc(100% - 30px) !important;
+}
+
+.botonAccion{
+  z-index: 1000;
+  color: white;
+  font-size: 18px;
+  padding: 15px;
+  border-radius: 50px;
+  left: 46.5%;
+  width: 78%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#finalizarLlamada{  
+  background: red;
+  margin-top: 15%;
+}
+
+#finalizarLlamada:hover{
+  cursor: pointer;
+  background: #FF8686;
+}
+
+#intentarReconectar{
+  background: #339af0;
+  margin-top: 5%;
+}
+
+#intentarReconectar:hover{
+  cursor: pointer;
+  background: #97c9f3;
+}
+
+.contenedorMapa{
+    width: 29%;
+    height: 59%;
+    position: absolute;
+    right: 0;
+    top: 25px;
+    border: 3px solid #FFE448;
+    border-radius: 5px;
+}
+
+.tituloContenedorMapa{
+  background: #FFE448;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.contenedorDatos{
+    position: absolute;
+    width: calc(100% - 575px);
+    height: 200px;
+    bottom: 75px;
+    z-index: 100;
+    border: 3px solid #FFE448;
+    border-radius: 3px;
+    right: 0;
+}
+
+.contenedorCoordenadas{
+    z-index: 100;
+    border: 3px solid #FFE448;
+    border-radius: 3px;
+    width: 1110px; 
+    margin: 0 auto; 
+    margin-top: 35px;
+}
+
+.contenedorUbicacionMapa{
+    z-index: 100;
+    border: 3px solid #FFE448;
+    border-radius: 3px;
+    width: 1110px; 
+    position: relative; 
+    margin: 0 auto; 
+    top: 35px; 
+    height: 75%;
+}
+
+.contenedorDatosEstadisticos{
+    z-index: 100;
+    border: 3px solid #FFE448;
+    border-radius: 3px;
+    width: 100%;
+    position: relative;
+    top: 35px;
+    height: 85px;
+    margin-bottom: 40px;
+}
+
+.tituloContenedorDatosEstadisticos{
+  background: #FFE448;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.contenedorEstPorAnio{
+    z-index: 100;
+    border: 3px solid #FFE448;
+    border-radius: 3px;
+    width: 49%;
+    /*height: 325px;*/
+    position: relative;
+    top: 25px;
+    display: inline-block;
+}
+
+.contenedorEstPorMes{
+    z-index: 100;
+    border: 3px solid #FFE448;
+    border-radius: 3px;
+    width: 49%;
+    /*height: 325px;*/
+    position: relative;
+    top: 25px;
+    display: inline-block;
+    float: right;
+}
+
+.contenedorEstPorHora{
+    z-index: 100;
+    border: 3px solid #FFE448;
+    border-radius: 3px;
+    width: 100%;
+    /*height: 605px;*/
+    position: relative;
+    margin-top: 55px;
+    margin-bottom: 55px;
+}
+
+.tituloContenedorUbicacionMapa{
+  background: #FFE448;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.tituloContenedorEstPorAnio{
+  background: #FFE448;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  height: 35px;
+}
+
+.tituloContenedorEstPorMes{
+  background: #FFE448;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  height: 35px;
+}
+
+.tituloContenedorEstPorHora{
+  background: #FFE448;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  height: 35px;
+}
+
+.tituloContenedorDatos{
+  background: #FFE448;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.tdEstadistica{
+  text-align: center;
+  width: 366px;
+}
+
+.spanDato{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#chartmeses{
+  margin-left: 15px;
+}
+
+#charthora{
+ /* height: 375px !important;
+  width: 950px !important;
+  margin: 0 auto;*/
+}
+
+#tablaDatos{
+  width: 100%;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.fa-arrow-up:hover{
+  cursor: pointer;
+  color: gray;
+}
+
+.fa-arrow-down:hover{
+  cursor: pointer;
+  color: gray;
+}
+
+#tablaDatos tr td{
+  padding: 15px;
+}
+
+.contenedorBotones{
+  position: absolute;
+  height: 200px;
+  width: 277px;
+  bottom: 75px;
+  left: 288px;
+}
+
+.leaflet-bottom{
+  display: none !important;
+}
+
+#ultimaActualizacion{
+    position: absolute;
+    z-index: 10000;
+    bottom: 0;
+    background: rgba(255, 255, 255, .9);
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 0 0 3px 3px;
+    /* font-weight: bold; */
+    /*font-style: italic;*/
+}
+
+#modalVerLlamadaFinalizada > .modal-dialog{
+  width: 700px !important;
+}
+
+#tablaDatosTaxista{
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 15px;
+}
+
+#tablaDatosTaxista tr td{
+  border-bottom: 2px solid #F1F1F1;
+  border-top: 2px solid #F1F1F1;
+  padding: 10px 5px;
+}
+
+#tablaDatosTaxista1024{
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 15px;
+}
+
+#tablaDatosTaxista1024 tr td{
+  border-bottom: 2px solid #F1F1F1;
+  border-top: 2px solid #F1F1F1;
+  padding: 10px 5px;
+}
+
+.col1Datos, .col3Datos, .col5Datos, .col7Datos{
+  width: 150px;
+  background: #F5F5F5; 
+}
+
+.col2Datos, .col6Datos{
+  width: 168px;
+  background: #FBFBFB;
+}
+
+.col4Datos, .col8Datos{
+  width: 201.2px;
+  background: #FBFBFB;
+}
+
+/*.col2Datos{
+  width: 20%;
+  background: #FBFBFB;
+}
+
+.col4Datos{
+  width: 30%;
+  background: #FBFBFB;
+}*/
+
+.col1Datos1024, .col5Datos1024{
+  width: 16.5%;
+  background: #F5F5F5; 
+}
+
+.col3Datos1024{
+  width: 14.5%;
+  background: #F5F5F5; 
+}
+
+.col2Datos1024{
+  width: 16%;
+  background: #FBFBFB;
+}
+
+.col4Datos1024{
+  width: 15%;
+  background: #FBFBFB;
+}
+
+/*.col5Datos1024{
+  width: 19%;
+  background: #F5F5F5; 
+}*/
+
+.col6Datos1024{
+  width: 16%;
+  background: #FBFBFB;
+}
+
+.tituloSeccion{
+  font-size: 18px;
+}
+
+#tablaDatosLlamada{
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 15px;
+}
+
+#tablaDatosLlamada tr td{
+  border-bottom: 2px solid #F1F1F1;
+  border-top: 2px solid #F1F1F1;
+  padding: 10px 5px;
+}
+
+#tablaDatosLlamada1024{
+  width: 31%;
+  border-collapse: collapse;
+  border-radius: 15px;
+  display: inline-block;
+  top: 0;
+  float: left;
+}
+
+#tablaDatosLlamada1024 tr td{
+  border-bottom: 2px solid #F1F1F1;
+  border-top: 2px solid #F1F1F1;
+  padding: 10px 5px;
+}
+
+#mapDatos{
+  width: 100%;
+  height: 305px;
+  margin-top: 15px;
+}
+
+#btnDescargar{
+  float: right;
+  margin-top: -12.5px;
+  width: 125px;
+  background: #FFE448;
+  border: 1px solid #e2cb3f;
+}
+
+#btnDescargar:hover{
+  cursor: pointer;
+  background: #fff2a5;
+}
+
+.leaflet-tile .leaflet-tile-loaded{
+  left: 0 !important;
+  top: 0 !important;
+}
+
+.imgVET{
+  height: 55px;
+}
+
+#tablaDatosTaxista{
+  display: block;
+}
+
+#tablaDatosTaxista1024{
+  display: none;
+}
+
+#tablaDatosLlamada{
+  display: block;
+}
+
+#tablaDatosLlamada1024{
+  display: none;
+}
+
+#lat{
+  width: 125px; 
+  display: inline; 
+  text-align: center;
+}
+
+#lng{
+  width: 125px; 
+  display: inline; 
+  text-align: center;
+}
+
+#btnBuscarUbicacion{
+  float: right; 
+  width: 145px; 
+  text-align: center;
+  position: relative; 
+  right: 0;
+}
+
+#imgCargando{
+  width: 20%; 
+  margin-left: 41%; 
+  margin-top: 25%;
+}
+
+#imgDisconnected{
+  position: relative; 
+  left: 39%; 
+  margin-top: 8%; 
+  display: none;
+}
+
+#imgReconnecting{
+   position: relative; 
+   left: 40%; 
+   margin-top: 8%; 
+   width: 20%; 
+   display: none;
+}

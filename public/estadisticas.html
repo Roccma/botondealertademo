@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Voy en Taxi</title>
+	<link rel = "stylesheet" href = "../css/app.css"/>
+	<link rel = "stylesheet" href = "../css/app-responsive.css"/>
+	<link href="../css/bootstrap.min.css" rel="stylesheet">	
+    <link href="../css/dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <script src = "https://static.opentok.com/v2/js/opentok.min.js"></script>
+
+    <link rel="shortcut icon" type="image/png" href="img/icon.png"/>
+</head>
+<body  class = "pagebody">
+	<nav class = "menu">
+	  <div class="container-fluid menucontainer">
+	    <div class="navbar-header" style = "margin-top: 5px">
+	      <img src="/img/Logo.png" class = "imgVET">
+	    </div>
+
+		<div class = "opcionesMenu">
+			<div id = "opcionEmergencias" class = "divIcono" onclick="window.location.href = 'index.html'">
+				<i class = "fa fa-phone"></i> <span>Emergencias</span>
+			</div>
+			<div id = "opcionFinalizadas" class = "divIcono" onclick="window.location.href = 'finalizadas.html'">				
+				<i class = "fa fa-phone-slash"></i> <span>Finalizadas</span>
+			</div>
+			<div id = "opcionLocalizacion" class = "divIcono" onclick="window.location.href = 'gps.html'">
+				<i class = "fa fa-map-marker-alt"></i> <span>Localización</span>
+			</div>
+			<div id = "opcionEstadisticas" class = "divIcono" onclick="window.location.href = 'estadisticas.html'">
+				<i class = "fa fa-chart-pie"></i> <span>Estadísticas</span>
+			</div>
+			<div id = "opcionServidores" class = "divIcono"  data-toggle="modal" data-target="#modalServidores">
+				<i class = "fa fa-server"></i> <span>Servidores</span>
+			</div>
+			<div id = "opcionOpenTok" class = "divIcono" data-toggle="modal" data-target="#modalCredenciales">
+				<i class = "fa fa-plug"></i> <span>Credenciales</span>
+			</div>
+		</div>
+
+	  </div>
+	</nav>
+	<div class = "main">
+		<div class = "contenedorMain">
+			<div class = "contenedorDatosEstadisticos">
+				<div class = "tituloContenedorDatosEstadisticos">Datos</div>
+				<div class = "contenidoDatosEstadisticos">
+					<table style = "width: 100%; margin-top: 12.5px" id = "tablaEstadisticas">						
+					</table>
+				</div>
+			</div>
+			<div class = "contenedorEstPorAnio">
+				<div class = "tituloContenedorEstPorAnio">Alertas por año
+					<div style = "display: inline; float: right; font-size: 18px"><i class = "fa fa-arrow-up" onclick="orderup(0)"></i>&nbsp;&nbsp;&nbsp;<i class = "fa fa-arrow-down" onclick="orderdown(0)"></i></div>
+				</div>
+				<div class="chart-container" style = "padding: 25px">
+					<canvas id="chartanios"></canvas>
+				</div>
+			</div>
+
+			<div class = "contenedorEstPorMes">
+				<div class = "tituloContenedorEstPorMes">Alertas por mes
+					<div style = "display: inline; float: right; font-size: 18px"><i class = "fa fa-arrow-up" onclick="orderup(1)"></i>&nbsp;&nbsp;&nbsp;<i class = "fa fa-arrow-down" onclick="orderdown(1)"></i></div>
+				</div>
+				<div class="chart-container" style = "padding: 25px">
+					<canvas id="chartmeses"></canvas>
+				</div>
+			</div>
+
+			<div class = "contenedorEstPorHora">
+				<div class = "tituloContenedorEstPorHora">Alertas por hora
+					<div style = "display: inline; float: right; font-size: 18px"><i class = "fa fa-arrow-up" onclick="orderup(2)"></i>&nbsp;&nbsp;&nbsp;<i class = "fa fa-arrow-down" onclick="orderdown(2)"></i></div>
+				</div>
+				<div class="chart-container" style = "padding: 25px">
+					<canvas id="charthora"></canvas>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+	<div class="modal fade" id = "modalCredenciales">
+		<div class = "modal-dialog">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<img src = "../img/tokbox.png" class = "imgTokbox"/>
+          			<h4 class="modal-title">Credenciales de OpenTok</h4>
+				</div>
+				<div class = "modal-body">
+					<div class = "form-group" id = "divApiKey" style = "margin-top: 10px;">
+						<label class = "control-label" for = "otApiKey">API key</label>
+						<input type = "text" id = "otApiKey" name = "otApiKey" style = "width: 100%; margin-top: 10px" class = "form-control"/>
+					</div>
+					<div class = "form-group" id = "divSecretKey" style = "margin-top: 10px;">
+						<label class = "control-label" for = "otSecretKey">Secret key</label>
+						<input type = "text" id = "otSecretKey" name = "otSecretKey" style = "width: 100%; margin-top: 10px" class = "form-control"/>
+					</div>
+					<div class = "alert alert-danger" id = "alertOpenTok" style = "margin-top: 25px; display: none">
+						<center><strong>ERROR:</strong> No se han completado campos</center>
+					</div>
+				</div>
+				<div class = "modal-footer">
+					<button type = "button" id = "btnAceptarOpenTok" class = "btn btn-success">Aceptar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="modal fade" id = "modalServidores">
+		<div class = "modal-dialog">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<img src = "../img/logo_miniatura.png" class = "imgTokbox imgServidores"/>
+          			<h4 class="modal-title">Servidores</h4>
+				</div>
+				<div class = "modal-body">
+					<div class = "form-group" id = "divServidorBDA" style = "margin-top: 10px;">
+						<label class = "control-label" for = "servidorBDA">Servidor web de Botón de Alerta</label>
+						<input type = "text" id = "servidorBDA" name = "servidorBDA" style = "width: 100%; margin-top: 10px" class = "form-control"/>
+					</div>
+					<div class = "form-group" id = "divServidorVET" style = "margin-top: 10px;">
+						<label class = "control-label" for = "servidorVET">Servidor web de Voy en Taxi</label>
+						<input type = "text" id = "servidorVET" name = "servidorVET" style = "width: 100%; margin-top: 10px" class = "form-control"/>
+					</div>
+					<div class = "form-group" id = "divServidorRespaldoVET" style = "margin-top: 10px;">
+						<label class = "control-label" for = "servidorRespaldoVET">Servidor de respaldo de Voy en Taxi</label>
+						<input type = "text" id = "servidorRespaldoVET" name = "servidorRespaldoVET" style = "width: 100%; margin-top: 10px" class = "form-control"/>
+					</div>
+					<div class = "alert alert-danger" id = "alertServidores" style = "margin-top: 25px; display: none">
+						<center><strong>ERROR:</strong> No se han completado campos</center>
+					</div>
+				</div>
+				<div class = "modal-footer">
+					<button type = "button" id = "btnAceptarServidores" class = "btn btn-success">Aceptar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class = "footer">
+		<center>Voy en Taxi | Bot&oacute;n de Alerta | 2018</center>
+	</footer>
+
+	<script src = "/socket.io/socket.io.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel = "stylesheet" href = "../css/leaflet.awesome-markers.css"/>
+	<script src = "../js/bootstrap.js"></script>	
+
+	<script src = "../js/leaflet.awesome-markers.js"></script>
+	<link rel = "stylesheet" href = "../css/leaflet.awesome-markers.css"/>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<script src = "../js/estadisticas.js"></script>	
+</body>
+</html>
