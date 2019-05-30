@@ -224,7 +224,7 @@ io.on('connection', (socket) => {
             var js = JSON.parse(body);
             console.log(js);
             let id = js.id;
-            io.emit('help', { sessionid: sessionId, token: token, cedula: cedula, name: name, email: email, telephone: telephone, latitud: latitud, longitud: longitud, fechaHora: fechaHora, cantidad_desconexiones: cantidad_desconexiones, id: id, url: url });
+            io.emit('help', { sessionId: sessionId, token: token, cedula: cedula, name: name, email: email, telephone: telephone, latitud: latitud, longitud: longitud, fechaHora: fechaHora, cantidad_desconexiones: cantidad_desconexiones, id: id, url: url });
 
         });
     });
