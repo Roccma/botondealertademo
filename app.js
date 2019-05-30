@@ -246,6 +246,8 @@ io.on('connection', (socket) => {
     });
 
     socket.on('update_call_data', (id, latitud_final, longitud_final, url_video) => {
+        console.log("------> Update Call Data");
+        console.log(`${ id } - ${ latitud_final } - ${ longitud_final } - ${ url_video }`);
         var url = "https://botondealerta-services.herokuapp.com/usuarios.php/ActualizarDatosLlamada?id=" + id + "&latitud_final=" + latitud_final + "&longitud_final=" + longitud_final + "&url_video=" + url_video;
         console.log(url);
         request.get(url, (error, res, body) => {
@@ -255,6 +257,8 @@ io.on('connection', (socket) => {
     });
 
     socket.on('update_polyline', (id, p, distancia) => {
+        console.log("------> Update Polyline");
+        console.log(`${ id } - ${ p } - ${ distancia }`);
         var url2 = "https://botondealerta-services.herokuapp.com/usuarios.php/UpdatePolyline?id=" + id + "&polyline=" + p + "&distancia=" + distancia;
         console.log(url2);
         request.get(url2, (error, res, body) => {
